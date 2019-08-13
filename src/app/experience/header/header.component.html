@@ -1,0 +1,52 @@
+<div class="preloader" id="pageLoad">
+    <div class="holder">
+        <div style="width:150px; height:150px; color:#FFFFFF;" align="center">
+            <img src="/assets/img/swaggy_loading.gif"><br>
+            Caricamento in corso ...
+        </div>
+    </div>
+</div>
+<!-- main wrapper -->
+<div id="wrapper">
+    <div class="page-wrapper">
+        <!-- main header -->
+        <header ng-controller="headerController" id="header" class="default-white-header">
+        
+            <div class="top-bar-mobile">
+                
+                <div class="col-md-12">
+                    <span class="icon icon-user" style="margin-top:-4px;"></span>
+                    <span class="text" style="margin-top:-4px;">{{loginName}}</span>
+                </div>
+        
+                
+            </div>
+            
+            <div class="logo-nav-container">
+                <!-- logo -->
+                <div class="logo logo-sx">
+                    <a href="/">
+                        <span class="hidden-xs"><img class="gray-logo" src="assets/img/logos/welfare/tantosvago_welfare_logo_header.png" alt="TantoSvago"></span>
+                        <span class="visible-xs"><img class="gray-logo" src="assets/img/logos/welfare/Easywelfare_logo.png" alt="TantoSvago"></span>
+                    </a>
+                </div>
+                <!-- main navigation -->
+
+                <nav class="navbar navbar-default navbar-welfare-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle nav-opener" data-toggle="collapse" data-target="#nav">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <app-navbar-mobile></app-navbar-mobile>
+                </nav>
+
+                
+                <div class="logo logo-dx hidden-xs">
+                        <span style="padding: 20px 30px;"><a href="/"><img class="gray-logo" src="assets/img/logos/welfare/Easywelfare_logo.png" alt=""></a></span>
+                </div>
+            </div>
+        </header>
