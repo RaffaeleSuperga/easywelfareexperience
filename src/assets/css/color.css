@@ -1,0 +1,39 @@
+.trip-form .trip-form-intest,
+.attivita-item h5:hover,
+.filter-value,
+.count-attivita .big,
+.filter-value,
+.info-footer h6,
+.footer-nav a:hover,
+.sconto-utilizzato,
+.carrello-item-title,
+.price span {color:#FAB04D !important;}
+
+.jcf-select-trip .jcf-hover,
+.feature-block,
+.article .img-caption, 
+.article .hover-article .link-purchase,
+.seperator:before,
+.sidebar .panel-heading a,
+div.tab button.active,
+.ngrs-range-slider .ngrs-join,
+.gm-style-iw h3,
+.detail-accordion > li > a,
+.button-preferite{background-color:#FAB04D !important;}
+
+#footer{background-color: #272728 !important;}
+
+.btn.btn-trip,
+#scroll-to-top,
+.btn-green,
+.btn.btn-default:hover,
+.pager-button{background-color: #0CAF99 !important;}
+
+.seperator,
+.gallery-list a{border-bottom: 1px solid #FAB04D;}
+
+
+.resp-tab-active {border: 1px solid #0CAF99 !important;border-top: 4px solid #0CAF99 !important;border-bottom: 0px #fff solid !important;}
+.resp-tab-content {border: 1px solid #0CAF99;border-top-color: #0CAF99;}
+
+.modal-content{border-color: #FAB04D !important;}

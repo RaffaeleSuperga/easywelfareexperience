@@ -24,7 +24,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/fonts/icomoon/icomoon.css",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/easy-responsive-tabs.css",
+              "src/assets/css/main.css",
+              "src/assets/css/angular.rangeSlider.css",
+              "src/assets/css/tantosvago1.css",
+              "src/assets/css/color.css",
+              "src/assets/css/hover.css",
+              "src/assets/css/menu_sideslide.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme-test.css",
+              "src/assets/css/settings.css"
             ],
             "scripts": []
           },

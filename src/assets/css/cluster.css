@@ -1,0 +1,29 @@
+/*BRIGHTEN*/
+.brighten img {
+      -webkit-filter: brightness(50%);
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+}
+
+.brighten img:hover {
+      -webkit-filter: brightness(100%);
+}
+
+* {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+.pic {
+      border: 5px solid #717377;
+      float: left;
+      height: 300px;
+      width: 300px;
+      margin: 20px;
+      overflow: hidden;
+}

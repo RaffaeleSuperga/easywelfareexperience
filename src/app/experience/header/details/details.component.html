@@ -1,0 +1,122 @@
+
+							<div id="two-columns" class="row">
+								
+								<!-- sidebar -->
+								<aside id="sidebar" class="col-sm-4 col-md-4">
+								
+									<article class="article has-hover-s1 sidebar-dettaglio">
+										<div class="thumbnail" style="min-height:620px;">
+											<div class="img-wrap">
+												<img ng-src = "{{attivita.CoverImage}}" height="228" width="350" alt="attivita.Title">
+												<div class="img-caption text-uppercase" style="z-index:1;"><span class="icon-{{attivita.MasterCategory}}"></span></div>
+										
+													
+                                            </div>
+							
+											<footer>
+												<div class="info-footer">
+													<div class="info-footer-prezzo">
+														<span class="price"><span>€ {{attivita.Price}}</span></span>
+													</div>
+													<div class="info-footer-ida">
+														<span>(IDA : {{attivita.Id}})</span>
+														<!--<span ng-if="!attivita.discountable" class="no-sconto">Attività non scontabile</span>-->
+													</div>
+												</div>
+												
+											</footer>	
+											
+											<?php if($progetto=='JOIN'){ ?>
+												
+												<script	src="https://corenew.jointly.pro/wallet/checkout-js/136"></script>
+												<button class="btn btn-default" data-toggle="modal" ng-click="acquista();">Acquista</button>
+											<?php }else{ ?>
+												<button class="btn btn-default" data-toggle="modal" ng-click="ordina('welfare');" ng-show="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
+												<button class="btn btn-default" data-toggle="modal" ng-click="ordinaCarta()" ng-show="cardEnabled">Paga con carta<br>di credito</button>
+											<?php } ?>
+											<!--
+											<button class="btn btn-default" data-toggle="modal" ng-click="ordina('welfare');" ng-show="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
+											<button class="btn btn-default" data-toggle="modal" ng-click="ordinaCarta()" ng-show="cardEnabled">Paga con carta<br>di credito</button>
+											-->
+											<img src="img/wellink.png" style="margin-top: 20px;width: 80%;"></img>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="modalAddCarrello" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+											  <div class="modal-dialog" role="document">
+												<div class="modal-content">
+												 <div></div>
+												  <div class="modal-body"align="center">
+													<!--<img src="img/icons/SWAGGY_TRASP.png" align="center"></img>-->
+													<h4 align="center" style="margin-top: 20px;"> <b>L'attività "{{attivita.Title}}" è stata aggiunta al carrello!</b><br></br></h4>
+												  </div>
+												  <div class="codice-sconto-button-container inline-button-container" style="width:50%;margin:20px auto;">
+												  
+													  <ul class="buttons-inline-container">
+														<li>
+															<button class="btn btn-default btn btn-inline" type="submit" ng-click="closePopUpCarrello()">CHIUDI</button>
+														</li>
+														<li>
+															<button class="btn btn-default btn" type="submit" ng-click="goToCarrello()">VAI AL CARRELLO</button>
+														</li>
+													  </ul>
+												  </div>
+												</div>
+											  </div>
+											</div>
+									
+										</div>
+									</article>
+									<article class="article has-hover-s1 sidebar-dettaglio">
+										<div class="thumbnail block-dettaglio-indirizzo">
+											
+                                            <h5>Partner</h5>
+											<p>{{attivita.Partner}}</p>
+                                            <h5>Spedizioni in tutta Italia</h5>
+                                           
+										</div>	
+									</article>
+									
+								
+
+
+								</aside>
+								
+								<div class="col-sm-8 col-md-8">
+									<article class="article has-hover-s1 sidebar-dettaglio"> 
+										<div class="thumbnail" style="min-height:620px;">
+										
+											<!--
+                                            <h5>Partner</h5>
+											<p>{{attivita.Partner}}</p>
+                                            -->
+											<h5>Descrizione attività</h5>
+											<!--<p ng-bind-html="descAttivita" class="desc-attivita"></p>-->
+											<p ng-bind-html="descAttivita" class="desc-attivita" ng-text-truncate="descAttivita" ng-tt-chars-threshold="200" ng-tt-more-label="Mostra" ng-tt-less-label="Nascondi"></p>
+                                            <!--
+                                            <h5>Indirizzo dell'attività</h5>
+											-->
+                                            <h5>Numero partecipanti</h5>
+											<p>{{attivita.NumPart}}</p>
+											<h5>Durata</h5>
+											<p>{{attivita.Duration}}</p>
+											
+											<h5 ng-show="showNote">Informazioni Aggiuntive</h5>
+											
+											
+											<p ng-show="showNote" ng-bind-html="attivita.AdditionalNote" ng-text-truncate="attivita.AdditionalNote" ng-tt-chars-threshold="200" ng-tt-more-label="Mostra" ng-tt-less-label="Nascondi"></p>
+                                            
+											
+											<h5 ng-show="msgMaster">Nota Bene</h5>
+											<p>{{ msgMaster }}</p>
+
+											
+                                            <!--<p ng-if="attivita.AdditionalNote">{{ attivita.AdditionalNote || "Nessuna informazione aggiuntiva per questa esperienza"}}</p>-->
+											
+										</div>
+									</article>		
+								</div>
+								
+								
+
+							</div>
+							
