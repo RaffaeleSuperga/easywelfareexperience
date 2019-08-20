@@ -12,8 +12,8 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Esperienze</strong></a>
 			<div class="dropdown-menu">
 				<ul>
-					<li ng-repeat="master in elencoMaster" ng-if="master.id">
-						<a href="#" ng-click="ricercaAttivitaByMaster(master.id, master.MasterName)" >{{master.MasterName}}</a>
+					<li *ngFor="master in masterList">
+						<a href="#" (click)="searchActivityByMaster(master.id, master.MasterName)" >{{master.MasterName}}</a>
 					</li>
 				</ul>
 			</div>

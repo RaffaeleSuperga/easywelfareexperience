@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
+  activity = {
+    Id: 'WBIT234CT56',
+    CoverImage: '',
+    MasterCategory: '',
+    Title: 'Lords of Chaos',
+    Partner: 'WelfareBit',
+    NumPart: 2,
+    Duration: 4,
+    Price: 20,
+    descActivity: '',
+    AdditionalNote: 'Wonderful film'
+  };
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
