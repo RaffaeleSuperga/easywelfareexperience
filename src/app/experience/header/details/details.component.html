@@ -29,14 +29,14 @@
 											<!-- <?php if($progetto=='JOIN'){ ?> -->
 												
 												<!-- <script	src="https://corenew.jointly.pro/wallet/checkout-js/136"></script>
-												<button class="btn btn-default" data-toggle="modal" ng-click="acquista();">Acquista</button> -->
+												<button class="btn btn-default" data-toggle="modal" (click)="acquista();">Acquista</button> -->
 											<!-- <?php }else{ ?> -->
-												<button class="btn btn-default" data-toggle="modal" ng-click="ordina('welfare');" ng-show="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
-												<button class="btn btn-default" data-toggle="modal" ng-click="ordinaCarta()" ng-show="cardEnabled">Paga con carta<br>di credito</button>
+												<button class="btn btn-default" data-toggle="modal" (click)="ordina('welfare');" *ngIf="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
+												<button class="btn btn-default" data-toggle="modal" (click)="ordinaCarta()" *ngIf="cardEnabled">Paga con carta<br>di credito</button>
 											<!-- <?php } ?> -->
 											<!--
-											<button class="btn btn-default" data-toggle="modal" ng-click="ordina('welfare');" ng-show="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
-											<button class="btn btn-default" data-toggle="modal" ng-click="ordinaCarta()" ng-show="cardEnabled">Paga con carta<br>di credito</button>
+											<button class="btn btn-default" data-toggle="modal" (click)="ordina('welfare');" *ngIf="welfareEnabled">Acquista con il tuo <br>credito welfare</button>
+											<button class="btn btn-default" data-toggle="modal" (click)="ordinaCarta()" *ngIf="cardEnabled">Paga con carta<br>di credito</button>
 											-->
 											<img src="/assets/img/wellink.png" style="margin-top: 20px;width: 80%;">
 											
@@ -53,10 +53,10 @@
 												  
 													  <ul class="buttons-inline-container">
 														<li>
-															<button class="btn btn-default btn btn-inline" type="submit" ng-click="closePopUpCarrello()">CHIUDI</button>
+															<button class="btn btn-default btn btn-inline" type="submit" (click)="closePopUpCarrello()">CHIUDI</button>
 														</li>
 														<li>
-															<button class="btn btn-default btn" type="submit" ng-click="goToCarrello()">VAI AL CARRELLO</button>
+															<button class="btn btn-default btn" type="submit" (click)="goToCarrello()">VAI AL CARRELLO</button>
 														</li>
 													  </ul>
 												  </div>
@@ -90,8 +90,8 @@
 											<p>{{activity.Partner}}</p>
                                             -->
 											<h5>Descrizione attività</h5>
-											<!--<p ng-bind-html="descactivity" class="desc-attivita"></p>-->
-											<p ng-bind-html="descAttivita" class="desc-attivita" ng-text-truncate="descAttivita" ng-tt-chars-threshold="200" ng-tt-more-label="Mostra" ng-tt-less-label="Nascondi"></p>
+											<!--<p [innerHTML]="descactivity" class="desc-attivita"></p>-->
+											<p [innerHTML]="descAttivita" class="desc-attivita">{{descAttivita | slice:0:200}}</p>
                                             <!--
                                             <h5>Indirizzo dell'attività</h5>
 											-->
@@ -100,13 +100,13 @@
 											<h5>Durata</h5>
 											<p>{{activity.Duration}}</p>
 											
-											<h5 ng-show="showNote">Informazioni Aggiuntive</h5>
+											<h5 *ngIf="showNote">Informazioni Aggiuntive</h5>
 											
 											
-											<p ng-show="showNote" ng-bind-html="activity.AdditionalNote" ng-text-truncate="activity.AdditionalNote" ng-tt-chars-threshold="200" ng-tt-more-label="Mostra" ng-tt-less-label="Nascondi"></p>
+											<p *ngIf="showNote" [innerHTML]="activity.AdditionalNote">{{activity.AdditionalNote | slice:0:200}}</p>
                                             
 											
-											<h5 ng-show="msgMaster">Nota Bene</h5>
+											<h5 *ngIf="msgMaster">Nota Bene</h5>
 											<p>{{ msgMaster }}</p>
 
 											

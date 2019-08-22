@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CfgServiceService } from 'src/app/experience/services/cfg-service.service';
+import { OrderService } from 'src/app/experience/services/order.service';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -11,11 +11,11 @@ export class NavbarMobileComponent implements OnInit {
   masterList = [];
 
   constructor(
-    private cfgService: CfgServiceService
+    private orderService: OrderService
   ) { }
 
   ngOnInit() {
-    this.masterList = this.cfgService.getMasterList('');
+    this.masterList = this.orderService.getMasterList('');
   }
 
   searchActivityByMaster(id, masterName) {

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ExperienceRoutingModule } from './experience-routing.module';
 
-import { CfgServiceService } from './services/cfg-service.service';
+import { OrderService } from './services/order.service';
 import { MapsService } from './services/maps.service';
 
 import { HeaderComponent } from './header/header.component';
@@ -22,10 +24,12 @@ import { CatalogComponent } from './catalog/catalog.component';
   ],
   imports: [
     CommonModule,
-    ExperienceRoutingModule
+    ExperienceRoutingModule,
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [
-    CfgServiceService, MapsService
+    OrderService, MapsService
   ]
 })
 export class ExperienceModule { }

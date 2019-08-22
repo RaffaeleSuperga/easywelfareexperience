@@ -1,23 +1,25 @@
 
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 			<!-- main banner -->
 			<!--
-			<section class="banner banner-inner parallax" data-stellar-background-ratio="0.5" id="banner-layout-leftsidebar">
-				<div class="banner-text">
-					<div class="center-text">
-						<div class="container">
-							<h1>Layout - Left Sidebar</h1>
-							<strong class="subtitle">The most detailed and modern Adventure theme!</strong>
+				<section class="banner banner-inner parallax" data-stellar-background-ratio="0.5" id="banner-layout-leftsidebar">
+					<div class="banner-text">
+						<div class="center-text">
+							<div class="container">
+								<h1>Layout - Left Sidebar</h1>
+								<strong class="subtitle">The most detailed and modern Adventure theme!</strong>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 			-->
 			
-			<div ng-controller="ricercaAttivita">
+			<!-- <div ng-controller="ricercaAttivita"> -->
+				<div>
 			
 				<section>
-					<div ng-controller="mapController" id="map-container">
+					<!-- <div ng-controller="mapController" id="map-container"> -->
+					<div id="map-container">
 						<div id="map-catalogo"></div>
 					</div>
 				</section>
@@ -34,31 +36,31 @@
 
 								<div class="filters-container">
 									<h4>Filtri Ricerca</h4>
-									<span class="filter-label" ng-if="filtroCategoria">Categoria <span class="filter-value">{{filtroCategoria}}</span></span>
-									<span class="filter-label" ng-if="filtroRegione">Regione <span class="filter-value">{{filtroRegione}}</span></span>
-									<span class="filter-label" ng-if="filtroProvincia">Provincia <span class="filter-value">{{filtroProvincia}}</span></span>
-									<span class="filter-label" ng-if="filtroPartecipanti">Partecipanti <span class="filter-value">{{filtroPartecipanti}}</span></span>
-									<span class="filter-label" ng-if="filtroPrezzoMin">Fascia Prezzo <span class="filter-value">€ {{filtroPrezzoMin}} - € {{filtroPrezzoMax}}</span></span>
-									<span class="filter-label" ng-if="filtroTesto">Testo <span class="filter-value">{{filtroTesto}}</span></span>
+									<span class="filter-label" *ngIf="filtroCategoria">Categoria <span class="filter-value">{{filtroCategoria}}</span></span>
+									<span class="filter-label" *ngIf="filtroRegione">Regione <span class="filter-value">{{filtroRegione}}</span></span>
+									<span class="filter-label" *ngIf="filtroProvincia">Provincia <span class="filter-value">{{filtroProvincia}}</span></span>
+									<span class="filter-label" *ngIf="filtroPartecipanti">Partecipanti <span class="filter-value">{{filtroPartecipanti}}</span></span>
+									<span class="filter-label" *ngIf="filtroPrezzoMin">Fascia Prezzo <span class="filter-value">€ {{filtroPrezzoMin}} - € {{filtroPrezzoMax}}</span></span>
+									<span class="filter-label" *ngIf="filtroTesto">Testo <span class="filter-value">{{filtroTesto}}</span></span>
 								</div>
 								
 							</div>
 								
 							<div class="col-sm-6">
 								
-								<span class="count-attivita pull-right">Attività trovate : <span class="big">{{countAttivita}}<span></span>
+								<span class="count-attivita pull-right">Attività trovate : <span class="big">{{countAttivita}}</span></span>
 							</div>
 						</div>
 				  
 						<div id="two-columns" class="row two-columns-margin">
 							<div id="content" class="col-sm-8 col-md-9">
 								<div id="catalogo-container">
-									<article class="col-sm-6 col-md-4 article has-hover-s1 attivita-item attivita-item-catalogo" ng-repeat="attivita in elencoAttivita">
+									<article class="col-sm-6 col-md-4 article has-hover-s1 attivita-item attivita-item-catalogo" *ngFor="let attivita of elencoAttivita">
 										<div class="thumbnail">
 											<div class="img-wrap">
-												<img src="{{attivita.CoverImage}}" alt="image description" ng-click="search_single(attivita.Id, attivita.Permalink)">
+												<img src="{{attivita.CoverImage}}" alt="image description" (click)="search_single(attivita.Id, attivita.Permalink)">
 											</div>
-											<h5 class="small-space titolo-attivita-catalogo" ng-click="search_single(attivita.Id, attivita.Permalink)">{{ attivita.Title }}</h5>
+											<h5 class="small-space titolo-attivita-catalogo" (click)="search_single(attivita.Id, attivita.Permalink)">{{ attivita.Title }}</h5>
 											<h6>Partner</h6>
 											<span>{{ attivita.Partner }}</span>
 											<h6>Regione</h6>
@@ -74,19 +76,19 @@
 												</footer>
 												
 											</aside>
-											<button class="btn btn-default btn-green btn-1-column" ng-click="search_single(attivita.Id, attivita.Permalink)">Dettagli</button>
-											<!--<button class="btn btn-default btn-green btn-1-column" ng-click="search_single(attivita.Id, attivita.Permalink)">Ordina</button>-->
+											<button class="btn btn-default btn-green btn-1-column" (click)="search_single(attivita.Id, attivita.Permalink)">Dettagli</button>
+											<!--<button class="btn btn-default btn-green btn-1-column" (click)="search_single(attivita.Id, attivita.Permalink)">Ordina</button>-->
 
 										</div>
 									</article>
 								</div>
 								<div class="pager-buttons-container">
-									<a class="btn-1-column pager-button" ng-click="pageprev()"><<</a>
-									<a class="btn-1-column pager-button" ng-click="pagenext()">>></a>
+									<a class="btn-1-column pager-button" (click)="pageprev()"><<</a>
+									<a class="btn-1-column pager-button" (click)="pagenext()">>></a>
 								</div>	
 							</div>
 							<!-- sidebar -->
-							<?php include '_sidebar.php';?>
+							<!-- <?php include '_sidebar.php';?> -->
 						</div>
 					</div>
 				</div>
@@ -96,7 +98,7 @@
 				
 			</div>
 		
-        </div>
-<app-footer></app-footer>
+        <!-- </div> -->
+<!-- <app-footer></app-footer> -->
 	
 

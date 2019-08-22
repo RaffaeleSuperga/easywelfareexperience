@@ -3,7 +3,7 @@
 	<ul class="nav navbar-nav">
 	<li class="dropdown" style="white-space:nowrap;">
 			<div class="img hidden-xs">
-			<img src="assets/assets/img/importante.png" height="25" width="25" alt="image description">
+			<img src="assets/img/importante.png" height="25" width="25" alt="image description">
 			<a href="page.php?text=comefunziona" class="dropdown-toggle" ><strong>IMPORTANTE</strong></a>
 			</div>
 			<a href="page.php?text=comefunziona" class="dropdown-toggle visible-xs"><strong>IMPORTANTE</strong></a>
@@ -12,7 +12,7 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Esperienze</strong></a>
 			<div class="dropdown-menu">
 				<ul>
-					<li *ngFor="master in masterList">
+					<li *ngFor="let master of masterList">
 						<a href="#" (click)="searchActivityByMaster(master.id, master.MasterName)" >{{master.MasterName}}</a>
 					</li>
 				</ul>
@@ -23,9 +23,9 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Informazioni</strong></a>
 			<div class="dropdown-menu">
 				<ul>
-					<li><a href="#" ng-click="goHome('come-funziona')">Come funziona</a></li>
-					<li><a href="#" ng-click="goHome('cosa-trovo')">Cosa trovo</a></li>
-					<li><a href="#" ng-click="goHome('tantosvago-welfare')">Chi Siamo</a></li>
+					<li><a href="#" (click)="goHome('come-funziona')">Come funziona</a></li>
+					<li><a href="#" (click)="goHome('cosa-trovo')">Cosa trovo</a></li>
+					<li><a href="#" (click)="goHome('tantosvago-welfare')">Chi Siamo</a></li>
 					<li><a href="page.php?text=contatti">Contatti</a></li>
 					<li><a href="page.php?text=condizionidivendita">Condizioni di Vendita e utilizzo</a></li>
 				</ul>
