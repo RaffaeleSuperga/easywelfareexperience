@@ -5,9 +5,19 @@ const tsApiBase = 'http://api.tantosvago.it/api/ts';
 
 export const environment = {
   production: false,
+  insertOrder: tsApiBase + '/InsertOrder',
   getSvaggyCodeActivityDetail: tsApiBase + '/GetSvaggyCodeActivityDetail',
   getMasterBookingBrief: tsApiBase + '/GetMasterBookingBrief',
-  setBooingData: tsApiBase + '/SetBookingData'
+  setBooingData: tsApiBase + '/SetBookingData',
+  registerContact: tsApiBase + '/registercontact',
+  registerAccount: tsApiBase + '/RegisterAccount',
+  searchGeoActivities: tsApiBase + '/searchgeoactivities',
+  searchActivities: tsApiBase + '/searchactivities',
+  searchActivitiesTs: tsApiBase + '/searchactivitiesTS',
+  getActivityEvidence: tsApiBase + '/getactivityevidence',
+  getNations: tsApiBase + '/GetNations',
+  getPartnerData: tsApiBase + '/getpartnerdata',
+  getMasterAttributes: tsApiBase + '/getmasterattributes'
 };
 
 
