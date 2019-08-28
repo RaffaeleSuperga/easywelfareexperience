@@ -22,6 +22,14 @@ export class OrderService {
       );
   }
 
+  getActivity(postdata): Observable<any> {
+    return this.http.post(environment.getActivity, postdata)
+      .pipe(
+        map(res => res['data']),
+        catchError(this.handleError<any>(`get Activity error data: ${postdata}`))
+      );
+  }
+
   getConfig(proj) {
     return {
       progetto: 'WQUI',

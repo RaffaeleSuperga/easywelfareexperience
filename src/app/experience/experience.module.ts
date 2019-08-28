@@ -15,12 +15,14 @@ import { NavbarMobileComponent } from './header/navbar-mobile/navbar-mobile.comp
 import { DetailsComponent } from './header/details/details.component';
 import { MainComponent } from './main/main.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { DetailComponent } from './detail/detail.component';
+import { ModalDetailComponent } from './detail/modal-detail/modal-detail.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent, FooterComponent, LayoutComponent,
-    NavbarMobileComponent, DetailsComponent, MainComponent, CatalogComponent
+    NavbarMobileComponent, DetailsComponent, MainComponent, CatalogComponent, DetailComponent, ModalDetailComponent
   ],
   imports: [
     CommonModule,

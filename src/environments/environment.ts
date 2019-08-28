@@ -2,9 +2,12 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const tsApiBase = 'http://api.tantosvago.it/api/ts';
+const gestPayApiStaging = 'https://sandbox.gestpay.net/api/';
+const gestPayApiProduction = 'https://ecomms2s.sella.it/api/';
 
 export const environment = {
   production: false,
+  insertPreOrder: tsApiBase + '/InsertPreOrder',
   insertOrder: tsApiBase + '/InsertOrder',
   getSvaggyCodeActivityDetail: tsApiBase + '/GetSvaggyCodeActivityDetail',
   getMasterBookingBrief: tsApiBase + '/GetMasterBookingBrief',
@@ -14,10 +17,13 @@ export const environment = {
   searchGeoActivities: tsApiBase + '/searchgeoactivities',
   searchActivities: tsApiBase + '/searchactivities',
   searchActivitiesTs: tsApiBase + '/searchactivitiesTS',
+  getActivity: '/getactivity',
   getActivityEvidence: tsApiBase + '/getactivityevidence',
   getNations: tsApiBase + '/GetNations',
   getPartnerData: tsApiBase + '/getpartnerdata',
-  getMasterAttributes: tsApiBase + '/getmasterattributes'
+  getMasterAttributes: tsApiBase + '/getmasterattributes',
+
+
 };
 
 

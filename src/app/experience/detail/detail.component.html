@@ -1,0 +1,114 @@
+<!-- <?php include '_header.php';?> -->
+			
+<!-- <div ng-controller="dettaglioAttivita"> -->
+    <!-- main banner -->
+    
+    <!-- main container -->
+    <main>
+        <!-- content with sidebar -->
+                
+                    
+                    
+        <div class="content-with-sidebar common-spacing">
+            <div class="container container-details">
+
+                <div class="col-md-12">
+                    <div class="col-md-1 hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a" >
+                        <!--<a class="btn-1-column pager-button" (click)="pageprev()"><<</a>-->
+                        <a href="{{pageCatalogo}}" class="hi-icon"><span class="icon-arrow-left"></span></a>
+                    </div>
+                    <div class="col-md-10">
+                        <header class="content-heading" style="margin-bottom:35px;">
+                                <h2 class="main-heading" style="height:10px;">{{attivita.Title}}</h2>
+                                <!--<span class="main-subtitle">Mastering the art of perfect adventure for 10+ years in the wild.</span>-->
+                    </header>
+                        <div class="seperator"></div>
+
+                    </div>
+                </div>
+                
+            
+
+                
+                <!-- <?php include $dettTemplateInclude;?> -->
+                
+                
+                
+                <!-- TAB FOLDER -->
+                <div id="two-columns" class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div id="tab-dettagli">
+                            <ul class="resp-tabs-list hor_1">
+                                
+                                <li>Descrizione Partner</li>
+                                <li>Servizi Partner</li>
+                                <li>Altro da questo Partner</li>
+                            
+                            </ul>
+                            <div class="resp-tabs-container hor_1">
+                                
+                                <div>
+                                    <p>{{ partnerDesc || "Non è disponibile nessuna descrizione per questo partner"}}</p>
+                                </div>
+                                
+                                <div>
+                            
+                                
+                                    <div *ngIf="serviziPartner.length">
+                                        <ul>
+                                            <li *ngFor="let servizio of serviziPartner">{{ servizio}}</li>
+                                        </ul>
+                                    </div>
+                                    <div *ngIf="!serviziPartner.length">
+                                        <p>Non sono disponibili informazioni sui servizi di questo partner</p>
+                                    </div>
+
+                                </div>
+                                
+                                <div>
+                                    
+                                    <div id="two-columns" class="row">
+                                    
+                                        <div class="col-md-12" *ngIf="!attivitaPartner.length">
+                                            <p>Nessuna attività per questo partner</p>
+                                        </div>
+                                        
+                                        <article class="col-md-3 col-sm-4 col-xs-12 article has-hover-s1 attivita-partner-item" ng-repeat="attivita in attivitaPartner">
+                                                                                                    
+                                            <div class="thumbnail">
+                                                <div class="img-wrap">
+                                                    <img src="{{attivita.CoverImage}}" alt="image description" (click)="search_single(attivita.Id, attivita.IdMasterCategory)">
+                                                    <div class="img-caption text-uppercase" style="z-index:1;"><span class="icon-{{attivita.MasterCategory}}"></span></div>
+                                                </div>
+                                                <h3 class="small-space" style="min-height:30px; text-transform:uppercase; font-size:1.0em; font-weight:bold;" align="center"><a href="" (click)="search_single(attivita.Id, attivita.IdMasterCategory)">{{ attivita.Title | slice:0:50 }}</a></h3>
+                                                <div class="info" align="center">{{attivita.Location.City}} <span *ngIf="attivita.Location.Province.length">({{attivita.Location.Province}})</span></div>
+                                                <!--<a href="" class="btn btn-default" (click)="search_single(attivita.Id, attivita.Permalink)">dettaglio</a>-->
+                                                <footer style="margin:0px 0 -5px; border:none; color: #92bd27;" align="center">
+                                                    <span class="price"><span [innerHTML]="getCurrency(attivita.Price)"></span></span>
+                                                </footer>
+                                            </div>
+                                            
+                                        </article>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                        
+            </div>
+        </div>
+    </main>
+    
+    <!-- <?php include '../../corporate/tantosvago.it/PartnersData/includes/_modalDettaglio.php';?> -->
+</div>
+<!-- <?php include '_footer.php';?> -->
+
+</body>
+</html>
